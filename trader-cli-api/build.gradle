@@ -3,15 +3,15 @@ plugins {
     id 'maven-publish'
 }
 
-group 'com.ing.trader.cli.api'
+group 'com.ing.fx.trading'
 version '1.0-SNAPSHOT'
 
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'com.ing.trader.cli.api'
+            groupId = 'com.ing.fx.trading'
             artifactId = 'trader-cli-api'
-            version = '0.0.1'
+            version = '0.0.2'
 
             from components.java
         }

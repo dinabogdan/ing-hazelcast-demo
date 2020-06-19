@@ -3,13 +3,13 @@ plugins {
     id 'maven-publish'
 }
 
-group 'com.ing.market.client.api'
+group 'com.ing.fx.trading'
 version '1.0-SNAPSHOT'
 
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'com.ing.market.client.api'
+            groupId = 'com.ing.fx.trading'
             artifactId = 'market-client-api'
             version = '0.0.1'
 
