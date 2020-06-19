@@ -3,21 +3,20 @@ plugins {
     id 'maven-publish'
 }
 
-group 'com.ing.trader.cli.api'
+group 'com.ing.market.client.api'
 version '1.0-SNAPSHOT'
 
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'com.ing.trader.cli.api'
-            artifactId = 'trader-cli-api'
+            groupId = 'com.ing.market.client.api'
+            artifactId = 'market-client-api'
             version = '0.0.1'
 
             from components.java
         }
     }
 }
-
 
 repositories {
     mavenCentral()
