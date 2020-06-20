@@ -1,0 +1,3 @@
+hazelcast:
+  monitoring: true
+  maxSize: 10000
