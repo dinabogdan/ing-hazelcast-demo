@@ -30,6 +30,8 @@ val imdgConfiguration = beans {
 
         clientConfig
     }
+
+    bean { HazelcastExecutor(ref(), ref()) }
 }
 
 private fun ClientConfig.enableUserCodeDeployment() {
