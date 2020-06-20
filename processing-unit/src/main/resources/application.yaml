@@ -1,3 +1,5 @@
+context.initializer.classes: com.ing.trading.fx.processingunit.PUApplicationBeansInitializer
+
 hazelcast:
   monitoring: true
   maxSize: 10000
