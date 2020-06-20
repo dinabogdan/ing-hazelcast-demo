@@ -25,7 +25,7 @@ dependencies {
     implementation("com.hazelcast:hazelcast:4.0")
     implementation("com.hazelcast:hazelcast-spring:4.0")
 
-    implementation("com.ing.fx.trading:trader-cli-api:0.0.3")
+    implementation("com.ing.fx.trading:trader-cli-api:0.0.4")
     implementation("com.ing.fx.trading:market-client-api:0.0.1")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test") {

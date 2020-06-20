@@ -1,9 +1,6 @@
 package com.ing.fx.trading.tradercli.infrastructure.pu
 
-import com.ing.fx.trading.tradercli.api.model.BuyCommand
-import com.ing.fx.trading.tradercli.api.model.QuotePair
-import com.ing.fx.trading.tradercli.api.model.SellCommand
-import com.ing.fx.trading.tradercli.api.model.TraderRefId
+import com.ing.fx.trading.tradercli.api.model.*
 import com.ing.fx.trading.tradercli.application.channel.TradingChannel
 import com.ing.fx.trading.tradercli.application.channel.model.TradeCommand
 import com.ing.fx.trading.tradercli.application.channel.model.TraderId
@@ -14,20 +11,20 @@ import reactor.core.publisher.Mono
 class TradingChannelImpl(
         private val hazelcastExecutor: HazelcastExecutor
 ) : TradingChannel {
-    override fun buy(trader: TraderId, buyCommand: Mono<TradeCommand.BuyCommand>): Mono<Unit> {
+    override fun buy(trader: TraderId, buyCommand: Mono<TradeCommand.BuyCommand>): Mono<BuySucceeded> {
         return buyCommand.flatMap { command ->
             hazelcastExecutor.execute(command.toHazelcastRequest(trader))
         }
     }
 
-    override fun sell(trader: TraderId, sellCommand: Mono<TradeCommand.SellCommand>): Mono<Unit> {
+    override fun sell(trader: TraderId, sellCommand: Mono<TradeCommand.SellCommand>): Mono<SellSucceeded> {
         return sellCommand.flatMap { command ->
             hazelcastExecutor.execute(command.toHazelcastRequest(trader))
         }
     }
 }
 
-private fun TradeCommand.BuyCommand.toHazelcastRequest(trader: TraderId): HazelcastRequest<Unit> {
+private fun TradeCommand.BuyCommand.toHazelcastRequest(trader: TraderId): HazelcastRequest<BuySucceeded> {
     return HazelcastRequest(
             trader.value,
             BuyTask(
@@ -40,7 +37,7 @@ private fun TradeCommand.BuyCommand.toHazelcastRequest(trader: TraderId): Hazelc
     )
 }
 
-private fun TradeCommand.SellCommand.toHazelcastRequest(trader: TraderId): HazelcastRequest<Unit> {
+private fun TradeCommand.SellCommand.toHazelcastRequest(trader: TraderId): HazelcastRequest<SellSucceeded> {
     return HazelcastRequest(
             trader.value,
             SellTask(
