@@ -19,8 +19,12 @@ val imdgConfiguration = beans {
         clientConfig.managedContext = springManagedContext
         clientConfig.connectionStrategyConfig.reconnectMode = ClientConnectionStrategyConfig.ReconnectMode.ON
         clientConfig.connectionStrategyConfig.isAsyncStart = imdgProperties.asyncStartClient
-        clientConfig.networkConfig.connectionAttemptLimit = imdgProperties.connectionAttemptLimit
-        clientConfig.networkConfig.connectionAttemptPeriod = imdgProperties.connectionAttemptPeriodMillis
+
+        clientConfig.connectionStrategyConfig.connectionRetryConfig.initialBackoffMillis = imdgProperties.initialBackoffMillis
+        clientConfig.connectionStrategyConfig.connectionRetryConfig.maxBackoffMillis = imdgProperties.maxBackoffMillis
+        clientConfig.connectionStrategyConfig.connectionRetryConfig.multiplier = imdgProperties.multiplier
+        clientConfig.connectionStrategyConfig.connectionRetryConfig.clusterConnectTimeoutMillis = imdgProperties.clusterConnectTimeoutMillis
+        clientConfig.connectionStrategyConfig.connectionRetryConfig.jitter = imdgProperties.jitter
 
         if (imdgProperties.userCodeDeploymentEnabled) {
             clientConfig.enableUserCodeDeployment()

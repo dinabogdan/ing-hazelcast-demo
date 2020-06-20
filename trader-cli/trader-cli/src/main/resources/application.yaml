@@ -4,11 +4,18 @@ server:
   port: 8081
 
 hazelcast:
-  connection-attempt-limit: 0
-  connection-attempt-period-millis: 1000
+  initialBackoffMillis: 1000
+  maxBackoffMillis: 6000
+  multiplier: 2.0
+  clusterConnectTimeoutMillis: 50000
+  jitter: 0.2
   asyncStartClient: true
   namespace: hazelcast
   userCodeDeploymentEnabled: true
   clientProperties:
     hazelcast.client.invocation.timeout.seconds: 5
   executorServiceName: trader-cli
+  tcp:
+    enabled: true
+    members: localhost:5701
+

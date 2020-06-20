@@ -1,6 +1,7 @@
 package com.ing.trading.fx.processingunit
 
 import com.ing.trading.fx.processingunit.infrastructure.imdg.imdgConfiguration
+import com.ing.trading.fx.processingunit.infrastructure.processingUnitConfiguration
 import org.springframework.context.ApplicationContextInitializer
 import org.springframework.context.support.BeanDefinitionDsl
 import org.springframework.context.support.GenericApplicationContext
@@ -10,7 +11,8 @@ class PUApplicationBeansInitializer : ApplicationBeansInitializer(puApplicationC
 val puApplicationConfig: ApplicationConfig
     get() = ApplicationConfig(
             listOf(
-                    imdgConfiguration
+                    imdgConfiguration,
+                    processingUnitConfiguration
             )
     )
 

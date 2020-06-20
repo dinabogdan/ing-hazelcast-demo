@@ -6,8 +6,11 @@ import org.springframework.boot.context.properties.ConstructorBinding
 @ConstructorBinding
 @ConfigurationProperties(prefix = "hazelcast")
 data class IMDGProperties(
-        val connectionAttemptLimit: Int,
-        val connectionAttemptPeriodMillis: Int,
+        val initialBackoffMillis: Int,
+        val maxBackoffMillis: Int,
+        val multiplier: Double,
+        val clusterConnectTimeoutMillis: Long,
+        val jitter: Double,
         val asyncStartClient: Boolean,
         val userCodeDeploymentEnabled: Boolean,
         val clientProperties: Map<String, String>,

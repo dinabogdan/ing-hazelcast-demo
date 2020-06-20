@@ -20,7 +20,7 @@ class HazelcastExecutor(
         try {
             val executorService = hazelcastInstance.getExecutorService(imdgProperties.executorServiceName)
 
-            executorService.submitToKeyOwner(request.task, request.partitioningKey, CompletableFutureExecutionCallback(result))
+            executorService.submitToKeyOwner(request.task, request.partitioningKey as Any, CompletableFutureExecutionCallback(result))
         } catch (ex: Exception) {
             result.completeExceptionally(ex)
         }
