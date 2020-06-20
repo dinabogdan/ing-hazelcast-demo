@@ -1,0 +1,14 @@
+context.initializer.classes: com.ing.fx.trading.tradercli.TraderCliApplicationBeansInitializer
+
+server:
+  port: 8081
+
+hazelcast:
+  connection-attempt-limit: 0
+  connection-attempt-period-millis: 1000
+  asyncStartClient: true
+  namespace: hazelcast
+  userCodeDeploymentEnabled: true
+  clientProperties:
+    hazelcast.client.invocation.timeout.seconds: 5
+  executorServiceName: trader-cli
