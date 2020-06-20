@@ -11,7 +11,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.ing.fx.trading'
             artifactId = 'trader-cli-api'
-            version = '0.0.2'
+            version = '0.0.3'
 
             from components.java
         }
