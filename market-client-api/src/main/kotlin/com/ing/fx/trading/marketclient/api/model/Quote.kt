@@ -8,6 +8,5 @@ data class Quote(
     val ask: QuoteAsk,
     val high: QuoteHigh,
     val low: QuoteLow,
-    val change: QuoteChange,
     val time: QuoteTime
 ) : Serializable
