@@ -7,7 +7,7 @@ import com.ing.fx.trading.marketclient.api.model.QuotePair
 import com.ing.trading.fx.processingunit.domain.QuotesRepository
 
 class QuotesRepositoryImpl(
-        private val hazelcastInstance: HazelcastInstance
+        hazelcastInstance: HazelcastInstance
 ) : QuotesRepository {
 
     private val map: IMap<QuotePair, Quote> = hazelcastInstance.getMap<QuotePair, Quote>("QUOTES_MAP")
