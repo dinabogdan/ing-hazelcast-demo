@@ -5,10 +5,13 @@ import com.hazelcast.map.IMap
 import com.ing.fx.trading.marketclient.api.model.Quote
 import com.ing.fx.trading.marketclient.api.model.QuotePair
 import com.ing.trading.fx.processingunit.domain.QuotesRepository
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 class QuotesRepositoryImpl(
         hazelcastInstance: HazelcastInstance
 ) : QuotesRepository {
+    private val logger: Logger = LoggerFactory.getLogger(QuotesRepositoryImpl::class.java)
 
     private val map: IMap<QuotePair, Quote> = hazelcastInstance.getMap<QuotePair, Quote>("QUOTES_MAP")
 
@@ -20,9 +23,11 @@ class QuotesRepositoryImpl(
         map.putAll(quotes.map { quote ->
             (quote.pair to quote)
         })
+        logger.info("Added $quotes")
     }
 
     override fun add(quote: Quote) {
         map[quote.pair] = quote
+        logger.info("Added $quote")
     }
 }

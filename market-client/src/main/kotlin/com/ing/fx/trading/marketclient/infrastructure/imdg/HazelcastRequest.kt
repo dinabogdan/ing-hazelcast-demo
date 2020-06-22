@@ -1,4 +1,4 @@
-package com.ing.fx.trading.tradercli.infrastructure.imdg
+package com.ing.fx.trading.marketclient.infrastructure.imdg
 
 import java.util.concurrent.Callable
 

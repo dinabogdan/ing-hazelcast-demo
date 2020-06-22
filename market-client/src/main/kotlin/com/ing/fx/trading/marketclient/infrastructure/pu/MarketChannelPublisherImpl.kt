@@ -4,7 +4,7 @@ import com.ing.fx.trading.marketclient.api.model.PublishResult
 import com.ing.fx.trading.marketclient.api.model.Quote
 import com.ing.fx.trading.marketclient.application.MarketChannelPublisher
 import com.ing.fx.trading.marketclient.infrastructure.imdg.HazelcastExecutor
-import com.ing.fx.trading.tradercli.infrastructure.imdg.HazelcastRequest
+import com.ing.fx.trading.marketclient.infrastructure.imdg.HazelcastRequest
 import reactor.core.publisher.Mono
 
 class MarketChannelPublisherImpl(

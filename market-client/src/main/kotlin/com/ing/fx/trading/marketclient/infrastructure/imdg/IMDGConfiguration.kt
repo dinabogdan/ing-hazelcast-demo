@@ -3,6 +3,8 @@ package com.ing.fx.trading.marketclient.infrastructure.imdg
 import com.hazelcast.client.config.ClientConfig
 import com.hazelcast.client.config.ClientConnectionStrategyConfig
 import com.hazelcast.spring.context.SpringManagedContext
+import com.ing.fx.trading.marketclient.infrastructure.pu.PublishQuoteTask
+import com.ing.fx.trading.marketclient.infrastructure.pu.PublishQuotesTask
 import org.springframework.context.support.beans
 
 val imdgConfiguration = beans {
@@ -32,12 +34,17 @@ val imdgConfiguration = beans {
 
         clientConfig
     }
+
+    bean { HazelcastExecutor(ref(), ref()) }
 }
 
 private fun ClientConfig.enableUserCodeDeployment() {
     this.userCodeDeploymentConfig.isEnabled = true
 
-    // TODO: Add task
+    this.userCodeDeploymentConfig.addClass(PublishQuoteTask::class.java)
+    this.userCodeDeploymentConfig.addClass(PublishQuoteTask.Companion::class.java)
+    this.userCodeDeploymentConfig.addClass(PublishQuotesTask::class.java)
+    this.userCodeDeploymentConfig.addClass(PublishQuotesTask.Companion::class.java)
 
     classLoader = this.classLoader
 

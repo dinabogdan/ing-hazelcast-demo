@@ -1,7 +1,6 @@
 package com.ing.fx.trading.marketclient.infrastructure.imdg
 
 import com.hazelcast.core.HazelcastInstance
-import com.ing.fx.trading.tradercli.infrastructure.imdg.HazelcastRequest
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import reactor.core.publisher.Mono
@@ -21,7 +20,7 @@ class HazelcastExecutor(
         try {
             val executorService = hazelcastInstance.getExecutorService(imdgProperties.executorServiceName)
 
-            executorService.submitToKeyOwner(request.task, request.partitioningKey as Any, CompletableFutureExecutionCallback(result))
+            executorService.submit(request.task, CompletableFutureExecutionCallback(result))
         } catch (ex: Exception) {
             result.completeExceptionally(ex)
         }

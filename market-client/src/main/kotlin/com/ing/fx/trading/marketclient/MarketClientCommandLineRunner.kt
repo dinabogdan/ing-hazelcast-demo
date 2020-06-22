@@ -3,9 +3,12 @@ package com.ing.fx.trading.marketclient
 import com.ing.fx.trading.marketclient.api.model.*
 import com.ing.fx.trading.marketclient.application.MarketChannelPublisher
 import com.ing.fx.trading.marketclient.lang.random
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.boot.CommandLineRunner
 import reactor.core.publisher.Flux
 import java.math.BigDecimal
+import java.math.MathContext
 import java.time.Duration
 import java.time.LocalTime
 import java.time.temporal.ChronoUnit
@@ -13,13 +16,20 @@ import java.time.temporal.ChronoUnit
 class MarketClientCommandLineRunner(
         private val marketChannelPublisher: MarketChannelPublisher
 ) : CommandLineRunner {
+
+    private val logger: Logger = LoggerFactory.getLogger(MarketClientCommandLineRunner::class.java)
+
     override fun run(vararg args: String?) {
-        Flux.interval(Duration.of(500, ChronoUnit.MILLIS))
+        logger.info("Starting to publish market changes...")
+        Flux.interval(Duration.of(1500, ChronoUnit.MILLIS))
                 .doOnNext {
+                    logger.info("Tick $it ... ")
                     Flux.fromArray(QuotePair.values())
                             .delayElements(Duration.of(250, ChronoUnit.MILLIS))
-                            .doOnNext { quotePair -> marketChannelPublisher.publish(quotePair.newQuote()) }
-                }
+                            .doOnNext { quotePair ->
+                                marketChannelPublisher.publish(quotePair.newQuote()).subscribe()
+                            }.subscribe()
+                }.subscribe()
 
     }
 
