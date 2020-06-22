@@ -28,6 +28,7 @@ dependencies {
     implementation("com.hazelcast:hazelcast:4.0")
 
     implementation("com.ing.fx.trading:trader-cli-api:0.0.4")
+    implementation("com.ing.fx.trading:market-client-api:0.0.4")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")

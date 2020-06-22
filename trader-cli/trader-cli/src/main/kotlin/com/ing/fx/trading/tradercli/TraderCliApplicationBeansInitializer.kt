@@ -3,7 +3,6 @@ package com.ing.fx.trading.tradercli
 import com.ing.fx.trading.tradercli.api.routerConfiguration
 import com.ing.fx.trading.tradercli.infrastructure.imdg.imdgConfiguration
 import com.ing.fx.trading.tradercli.infrastructure.pu.processingUnitConfiguration
-import com.ing.fx.trading.tradercli.infrastructure.traderCliConfiguration
 import org.springframework.context.ApplicationContextInitializer
 import org.springframework.context.support.BeanDefinitionDsl
 import org.springframework.context.support.GenericApplicationContext
