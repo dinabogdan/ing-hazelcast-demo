@@ -14,6 +14,7 @@ class HazelcastExecutor(
     val logger: Logger = LoggerFactory.getLogger(HazelcastExecutor::class.java)
 
     fun <T> execute(request: HazelcastRequest<T>): Mono<T> {
+
         val result = CompletableFuture<T>()
 
         try {

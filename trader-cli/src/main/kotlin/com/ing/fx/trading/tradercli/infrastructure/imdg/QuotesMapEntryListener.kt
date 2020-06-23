@@ -8,6 +8,7 @@ import com.ing.fx.trading.marketclient.api.model.QuotePair
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import java.io.Serializable
+import java.lang.IllegalStateException
 
 class QuotesMapEntryListener : EntryListener<QuotePair, Quote>, Serializable {
 
@@ -18,11 +19,11 @@ class QuotesMapEntryListener : EntryListener<QuotePair, Quote>, Serializable {
     }
 
     override fun entryExpired(event: EntryEvent<QuotePair, Quote>?) {
-        TODO("Not yet implemented")
+        throw IllegalStateException("Entries can not be expired")
     }
 
     override fun entryEvicted(event: EntryEvent<QuotePair, Quote>?) {
-        TODO("Not yet implemented")
+        throw IllegalStateException("Entries can not be evicted")
     }
 
     override fun entryUpdated(event: EntryEvent<QuotePair, Quote>?) {
@@ -30,14 +31,14 @@ class QuotesMapEntryListener : EntryListener<QuotePair, Quote>, Serializable {
     }
 
     override fun mapCleared(event: MapEvent?) {
-        TODO("Not yet implemented")
+        throw IllegalStateException("Map can not be cleared")
     }
 
     override fun mapEvicted(event: MapEvent?) {
-        TODO("Not yet implemented")
+        throw IllegalStateException("Map can not be evicted")
     }
 
     override fun entryRemoved(event: EntryEvent<QuotePair, Quote>?) {
-        TODO("Not yet implemented")
+        throw IllegalStateException("Entries can not be removed ")
     }
 }

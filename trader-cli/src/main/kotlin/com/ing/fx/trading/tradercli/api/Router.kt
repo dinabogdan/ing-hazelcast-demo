@@ -10,10 +10,16 @@ fun route(
         traderId: TraderId,
         tradingChannel: TradingChannel
 ): RouterFunction<ServerResponse> = router {
-    POST("/buy") { request ->
+    POST("/api/buy") { request ->
         ok().body(tradingChannel.buy(
                 traderId,
                 request.bodyToMono(TradeCommand.BuyCommand::class.java))
+        )
+    }
+    POST("/api/sell") { request ->
+        ok().body(tradingChannel.sell(
+                traderId,
+                request.bodyToMono(TradeCommand.SellCommand::class.java))
         )
     }
 }
