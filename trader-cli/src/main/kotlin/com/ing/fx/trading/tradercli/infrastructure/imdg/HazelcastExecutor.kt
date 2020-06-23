@@ -4,7 +4,6 @@ import com.hazelcast.core.HazelcastInstance
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import reactor.core.publisher.Mono
-import java.lang.Exception
 import java.util.concurrent.CompletableFuture
 
 class HazelcastExecutor(

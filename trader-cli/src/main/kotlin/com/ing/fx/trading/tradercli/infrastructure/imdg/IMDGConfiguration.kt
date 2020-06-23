@@ -37,12 +37,6 @@ val imdgConfiguration = beans {
         clientConfig.connectionStrategyConfig.connectionRetryConfig.clusterConnectTimeoutMillis = imdgProperties.clusterConnectTimeoutMillis
         clientConfig.connectionStrategyConfig.connectionRetryConfig.jitter = imdgProperties.jitter
 
-//        val listenerConfig = ListenerConfig(QuotesMapEntryListener::class.java.name)
-////        listenerConfig.className = QuotesMapEntryListener::class.java.name
-//        listenerConfig.implementation = QuotesMapEntryListener()
-//
-//        clientConfig.addListenerConfig(listenerConfig)
-
         if (imdgProperties.userCodeDeploymentEnabled) {
             clientConfig.enableUserCodeDeployment()
         }
