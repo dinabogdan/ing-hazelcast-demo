@@ -4,3 +4,6 @@ hazelcast:
   monitoring: true
   maxSize: 10000
   namespace: hazelcast
+  tcp:
+    enabled: true
+    members: "localhost:5701"

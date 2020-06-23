@@ -14,6 +14,13 @@ val imdgConfiguration = beans {
 
         config.managedContext = springManagedContext
         config.userCodeDeploymentConfig.isEnabled = true
+        config.networkConfig.join.tcpIpConfig.isEnabled = true
+
+        val imdgProperties = ref<IMDGProperties>()
+        if (imdgProperties.tcpProperties.enabled) {
+            config.networkConfig.join.multicastConfig.isEnabled = false
+            config.networkConfig.join.tcpIpConfig.members = imdgProperties.tcpProperties.members
+        }
 
         config.addTraderHistoryMap(ref())
         config.addQuotesMap()

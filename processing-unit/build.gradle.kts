@@ -1,7 +1,9 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
     `maven-publish`
+    java
     id("org.springframework.boot") version "2.3.1.RELEASE"
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
     kotlin("jvm") version "1.3.72"
@@ -17,21 +19,12 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.ing.fx.trading"
             artifactId = "processing-unit"
-            version = "0.0.1"
+            version = "0.0.3"
 
             from(components["java"])
         }
     }
 }
-
-tasks.getByName<Jar>("jar") {
-    enabled = true
-}
-
-tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
-    mainClassName = "com.ing.trading.fx.processingunit.ProcessingUnitApplication"
-}
-
 
 repositories {
     mavenLocal()
