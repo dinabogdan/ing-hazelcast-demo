@@ -6,6 +6,7 @@ import com.hazelcast.core.HazelcastInstance
 import com.hazelcast.spring.context.SpringManagedContext
 import com.ing.fx.trading.marketclient.api.model.Quote
 import com.ing.fx.trading.marketclient.api.model.QuotePair
+import com.ing.fx.trading.tradercli.TraderCliApplication
 import com.ing.fx.trading.tradercli.infrastructure.pu.BuyTask
 import com.ing.fx.trading.tradercli.infrastructure.pu.SellTask
 import org.springframework.context.support.beans
@@ -58,7 +59,7 @@ private fun ClientConfig.enableUserCodeDeployment() {
     this.userCodeDeploymentConfig.addClass(SellTask.Companion::class.java)
     this.userCodeDeploymentConfig.addClass(QuotesMapEntryListener::class.java)
 
-    classLoader = this.classLoader
+    classLoader = TraderCliApplication::class.java.classLoader
 
 }
 

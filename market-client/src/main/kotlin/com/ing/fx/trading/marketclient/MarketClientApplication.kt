@@ -11,6 +11,6 @@ import org.springframework.boot.runApplication
 @SpringBootApplication
 class MarketClientApplication
 
-fun main(args: Array<String>) {
+fun main(vararg args: String) {
     runApplication<MarketClientApplication>(*args)
 }

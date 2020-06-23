@@ -3,6 +3,7 @@ package com.ing.fx.trading.marketclient.infrastructure.imdg
 import com.hazelcast.client.config.ClientConfig
 import com.hazelcast.client.config.ClientConnectionStrategyConfig
 import com.hazelcast.spring.context.SpringManagedContext
+import com.ing.fx.trading.marketclient.MarketClientApplication
 import com.ing.fx.trading.marketclient.infrastructure.pu.PublishQuoteTask
 import com.ing.fx.trading.marketclient.infrastructure.pu.PublishQuotesTask
 import org.springframework.context.support.beans
@@ -46,7 +47,7 @@ private fun ClientConfig.enableUserCodeDeployment() {
     this.userCodeDeploymentConfig.addClass(PublishQuotesTask::class.java)
     this.userCodeDeploymentConfig.addClass(PublishQuotesTask.Companion::class.java)
 
-    classLoader = this.classLoader
+    classLoader = MarketClientApplication::class.java.classLoader
 
 }
 
