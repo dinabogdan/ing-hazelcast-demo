@@ -20,36 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d999b221-8c14-4bbb-a02c-c46c6c445816" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/market-client-0.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/market-client-api-0.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/market-client-api-0.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/market-client-api-0.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/market-client-api-0.0.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/market-client/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/market-client/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/market-client/src/main/kotlin/com/ing/fx/trading/marketclient/MarketClientApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/market-client/src/main/kotlin/com/ing/fx/trading/marketclient/MarketClientApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit-0.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/run/node-1/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/run/node-1/processing-unit-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/run/node-1/runNode1.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/run/node-2/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/run/node-2/processing-unit-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/run/node-2/runNode2.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/run/node-3/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/run/node-3/node-1/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/run/node-3/node-1/processing-unit-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/run/node-3/node-1/runNode1.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/run/node-3/node-2/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/run/node-3/node-2/processing-unit-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/run/node-3/node-2/runNode2.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/run/node-3/processing-unit-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/run/node-3/runNode3.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trader-cli-0.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trader-cli-api-0.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trader-cli-api-0.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trader-cli-api-0.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trader-cli-api-0.0.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trader-cli/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/trader-cli/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trader-cli/src/main/kotlin/com/ing/fx/trading/tradercli/infrastructure/imdg/IMDGConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/trader-cli/src/main/kotlin/com/ing/fx/trading/tradercli/infrastructure/imdg/IMDGConfiguration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processing-unit/src/main/kotlin/com/ing/trading/fx/processingunit/infrastructure/imdg/IMDGConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/processing-unit/src/main/kotlin/com/ing/trading/fx/processingunit/infrastructure/imdg/IMDGConfiguration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trader-cli/src/main/kotlin/com/ing/fx/trading/tradercli/infrastructure/pu/BuyTask.kt" beforeDir="false" afterPath="$PROJECT_DIR$/trader-cli/src/main/kotlin/com/ing/fx/trading/tradercli/infrastructure/pu/BuyTask.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
