@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d999b221-8c14-4bbb-a02c-c46c6c445816" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing-unit/src/main/kotlin/com/ing/trading/fx/processingunit/infrastructure/imdg/IMDGConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/processing-unit/src/main/kotlin/com/ing/trading/fx/processingunit/infrastructure/imdg/IMDGConfiguration.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trader-cli/src/main/kotlin/com/ing/fx/trading/tradercli/infrastructure/pu/BuyTask.kt" beforeDir="false" afterPath="$PROJECT_DIR$/trader-cli/src/main/kotlin/com/ing/fx/trading/tradercli/infrastructure/pu/BuyTask.kt" afterDir="false" />
-    </list>
+    <list default="true" id="d999b221-8c14-4bbb-a02c-c46c6c445816" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,6 +96,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="1137" key="SettingsEditor" timestamp="1592910293412">
